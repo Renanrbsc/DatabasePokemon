@@ -1,0 +1,16 @@
+version: '3'
+services:
+  database_1:
+    image: postgres:11.5-alpine
+    restart: always
+    volumes:
+      - flaskapidb:/var/lib/postgresql/data
+    ports:
+      - 4000:4000
+    environment:
+      POSTGRES_USER: DatabasePokemon
+      POSTGRES_PASSWORD: pokemon123
+      POSTGRES_DB: DatabasePokemon
+      TZ: America/Sao_Paulo
+volumes:
+  flaskapidb:
