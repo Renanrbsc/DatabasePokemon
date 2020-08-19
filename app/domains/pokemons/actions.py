@@ -1,6 +1,7 @@
 from typing import Dict, List
 from database.repository import commit, save
 from app.domains.pokemons.models import Pokemon
+from utils.convert_txt import convert_txt_for_json
 
 
 def create(data: Dict[str, str]) -> Pokemon:
@@ -19,9 +20,6 @@ def create(data: Dict[str, str]) -> Pokemon:
                                )
     return save(pokemon)
 
-
-def import_txt() -> str:
-    pass
 
 def get() -> List[Pokemon]:
     return Pokemon.query.all()
@@ -54,3 +52,30 @@ def update(id: str, data: Dict[str, str]) -> Pokemon:
 def delete(id: str) -> Pokemon:
     pokemon: Pokemon = get_by_id(id)
     return "Work in progress!"
+
+
+def import_txt(text: str) -> List[Pokemon]:
+    pokemon: Pokemon = Pokemon()
+    list_models: List[Pokemon] = list()
+
+    dictionary_list = convert_txt_for_json(text, pokemon.serialize())
+    for data in dictionary_list:
+        model: Pokemon = Pokemon(
+                                 id=data['id'],
+                                 name=data['name'],
+                                 type=data['type'],
+                                 height=data['height'],
+                                 weight=data['weight'],
+                                 category=data['category'],
+                                 ability=data['ability'],
+                                 ability_two=data['ability_two'],
+                                 weakness=data['weakness'],
+                                 weakness_two=data['weakness_two'],
+                                 description=data['description']
+                                 )
+        list_models.append(model)
+
+    for model in list_models:
+        save(model)
+
+    return list_models
