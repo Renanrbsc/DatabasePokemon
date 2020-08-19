@@ -31,8 +31,7 @@ class Pokemon(db.Model):
                 "ability_two": self.ability_two, 
                 "weakness": self.weakness,
                 "weakness_two": self.weakness_two, 
-                "description": self.description,
-                "trainer": self.trainers.serialize()
+                "description": self.description
                 }
 
     def __str__(self):
