@@ -6,7 +6,7 @@ services:
     volumes:
       - flaskapidb:/var/lib/postgresql/data
     ports:
-      - 4000:4000
+      - 5432:5432
     environment:
       POSTGRES_USER: DatabasePokemon
       POSTGRES_PASSWORD: pokemon123
