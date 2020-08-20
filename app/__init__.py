@@ -1,6 +1,9 @@
 from flask import Flask, json
 from werkzeug.exceptions import HTTPException, InternalServerError
 
+from app.domains.pokemons.views import app_pokemons
+from app.domains.trainers.views import app_trainers
+
 from database import db, migrate
 
 
@@ -15,7 +18,8 @@ def create_app():
 
 
 def _register_blueprint(app):
-    app.register_blueprint()
+    app.register_blueprint(app_pokemons)
+    app.register_blueprint(app_trainers)
 
 
 def _handle_default_exception(e):
@@ -29,9 +33,9 @@ def _handle_default_exception(e):
 
 def get_data(code, description):
     return json.dumps({
-        'code': code,
-        'message': description,
-    })
+                       'code': code,
+                       'message': description,
+                       })
 
 
 def _handle_internal_server_error_exception(e):
