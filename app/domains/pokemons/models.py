@@ -1,5 +1,10 @@
 from database import db
-from app.domains.trainers.models import trainers_pokemons
+
+trainer_pokemons = db.Table(
+                             "trainer_pokemons",
+                             db.Column('trainer_id', db.String(36), db.ForeignKey('trainers.id')),
+                             db.Column('pokemon_id', db.String(36), db.ForeignKey('pokemons.id'))
+                             )
 
 
 class Pokemon(db.Model):
@@ -11,13 +16,13 @@ class Pokemon(db.Model):
     height = db.Column(db.Float())
     weight = db.Column(db.Float())
     category = db.Column(db.String(length=50))
-    ability = db.Column(db.String(length=10))
+    ability = db.Column(db.String(length=100))
     ability_two = db.Column(db.String(length=100))
     weakness = db.Column(db.String(length=50))
     weakness_two = db.Column(db.String(length=50))
     description = db.Column(db.String(length=255))
 
-    trainers = db.relationship("Trainer", back_populates="pokemons", secondary=trainers_pokemons)
+    trainers = db.relationship("Trainer", back_populates="pokemons", secondary=trainer_pokemons)
 
     def serialize(self):
         return {
