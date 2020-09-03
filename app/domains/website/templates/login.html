@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>POKEMON</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<!--CSS-->
+		<link rel="stylesheet" href="../static/css/style.css"/>
+
+		 <!--JavaScript-->
+        <script src="../static/js/validate.js"></script>
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div>
+
+					<!-- Header -->
+					<header>
+
+						<!-- Menu -->
+						<div>
+
+							<!-- Logo -->
+							<a href="/" class="logo">
+								<span><img src="../../../../scrapper/image_save/pokemons/Articuno.png" width="100px"/></span>
+							</a>
+							<label class="logotext">Interface Web - Admin </label>
+						</div>
+					</header>
+
+
+				<!-- Main -->
+					<div>
+						<div>
+							<form action="/login">
+								<h1 id="validar"></h1>
+								<label>Informe seu login</label><br><br>
+								<input type="text" placeholder="Username ou Email" name="username" id="username" onKeyup="ocultarErro()">
+
+								<input type="password" placeholder="Senha" name="password" id="password" onKeyup="ocultarErro()">
+
+								<input type="submit" value="Login" onclick="return validar()">
+
+							</form>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footermenu">
+						<div>
+							<section>
+								<br>
+								<h6>Renan Berti Ribas</h6>
+								<h2>Follow</h2>
+								<li class="follow">
+									<a href="https://github.com/Renanrbsc">GitHub</a>
+								</li>
+							</section>
+						</div>
+					</footer>
+			</div>
+	</body>
+</html>

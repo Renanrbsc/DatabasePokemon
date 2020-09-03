@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>POKEMON</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/style.css"/>
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div>
+
+					<!-- Header -->
+					<header>
+
+						<!-- Menu -->
+						<ul >
+							<li class="menu"><a href="/sair">Sair </a></li>
+							<li class="menu"><a href="Buscar id.html">Buscar ID </a></li>
+							<li class="menu"><a href="/menuadmin/adicionarpokemon">Adicionar Pokemon</a></li>
+							<li class="menu"><a href="/menuadmin">Menu Admin</a></li>
+
+						</ul>
+
+						<div>
+
+							<!-- Logo -->
+							<a href="/" class="logo">
+								<span><img src="../../../../scrapper/image_save/pokemons/Articuno.png" width="100px"/></span>
+							</a>
+							<label class="logotext">Interface Web - Admin </label>
+						</div>
+					</header>
+
+
+				<!-- Main -->
+					<div align="center">
+						<div>
+							<form class="formadmin">
+								<h1 id="validar"></h1>
+								<label>Menu Pokemon admin</label><br><br>
+								<table border="1">
+									<thead>
+										<th style="width:20px;"></th>
+										<th style="width:35px;">ID</th>
+										<th style="width:100px;">Nome</th>
+										<th style="width:100px;">Tipo</th>
+										<th style="width:70px;">Altura</th>
+										<th style="width:70px;">Peso</th>
+										<th style="width:100px;">Categoria</th>
+										<th style="width:150px;">Habilidade</th>
+										<th style="width:150px;">Habilidade2</th>
+										<th style="width:70px;">Fraqueza</th>
+										<th style="width:70px;">Fraqueza2</th>
+										<th style="width:50px;">Descricao</th>
+									</thead>
+									<tbody>
+									{% for dados in lista %}
+										<tr >
+											<th>
+												<input style="width:20px;" type="radio" name="id" value="{{dados[0]}}">
+											</th>
+											<th style="width:35px;">{{dados[0]}}</th>
+											<th style="width:100px;">{{dados[1]}}</th>
+											<th style="width:100px;">{{dados[2]}}</th>
+											<th style="width:70px;">{{dados[3]}}</th>
+											<th style="width:70px;">{{dados[4]}}</th>
+											<th style="width:100px;">{{dados[5]}}</th>
+											<th style="width:150px;">{{dados[6]}}</th>
+											<th style="width:150px;">{{dados[7]}}</th>
+											<th style="width:70px;">{{dados[8]}}</th>
+											<th style="width:70px;">{{dados[9]}}</th>
+											<th style="width:50px;">
+												<select style="width:20px;">
+													<option>{{dados[10]}}</option>
+												</select>
+											</th>
+											<th><a class = "excluir" href="menuadminpokemon/excluirpokemon?id={{dados[0]}}">Excluir</a> </th>
+											<th><a class = "editar" href="menuadminpokemon/editarpokemon?id={{dados[0]}}">Editar</a> </th>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+							</form>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer>
+						<div>
+							<section>
+								<br>
+								<h6>Renan Berti Ribas</h6>
+								<h2>Follow</h2>
+								<li class="follow">
+									<a href="https://github.com/Renanrbsc">GitHub</a>
+								</li>
+							</section>
+						</div>
+					</footer>
+			</div>
+	</body>
+</html>
