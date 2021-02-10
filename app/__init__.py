@@ -3,6 +3,7 @@ from werkzeug.exceptions import HTTPException, InternalServerError
 
 from app.domains.pokemons.views import app_pokemons
 from app.domains.trainers.views import app_trainers
+from app.domains.services.views import app_services
 
 from database import db, migrate
 
@@ -20,6 +21,7 @@ def create_app():
 def _register_blueprint(app):
     app.register_blueprint(app_pokemons)
     app.register_blueprint(app_trainers)
+    app.register_blueprint(app_services)
 
 
 def _handle_default_exception(e):
