@@ -1,2 +1,2 @@
 # DatabasePokemon
-Repository for system development that gathers information from Pokémon and Trainers contained in the animation, which can be accessed via API and Frontend html5.
+Back-End developed using Python language, using a design pattern based on Alembic and flaskapi, contains 'Postgres' docker image.
