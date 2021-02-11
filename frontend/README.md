@@ -1,0 +1,1 @@
+Repository for the development of the Front-End Vue.JS of the application that gathers information from Pokemon and trainers contained in the animation.
