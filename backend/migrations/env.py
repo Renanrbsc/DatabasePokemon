@@ -19,8 +19,6 @@ logger = logging.getLogger('alembic.env')
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-from app.domains.pokemons.models import Pokemon
-from app.domains.trainers.models import Trainer
 
 # target_metadata = mymodel.Base.metadata
 from flask import current_app

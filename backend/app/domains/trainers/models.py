@@ -1,4 +1,4 @@
-from database import db
+from backend.database import db
 
 trainers_pokemons = db.Table("trainers_pokemons",
                              db.Column('trainer_id', db.String(36), db.ForeignKey('trainers.id')),

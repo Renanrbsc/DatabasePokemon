@@ -1,4 +1,4 @@
-from database import db
+from backend.database import db
 
 _session = db.session
 

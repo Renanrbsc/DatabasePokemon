@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from app.domains.trainers.actions import create as create_trainer, \
+from backend.app.domains.trainers.actions import create as create_trainer, \
                                          get_by_id as get_trainer_by_id, \
                                          get as get_trainers, \
                                          update as update_trainer, \

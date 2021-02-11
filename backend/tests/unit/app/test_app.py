@@ -1,9 +1,9 @@
 from werkzeug.exceptions import InternalServerError
 
-from app.exceptions import NotFoundException
+from backend.app import NotFoundException
 import unittest
 
-from app import create_app
+from backend.app import create_app
 
 _app = create_app()
 

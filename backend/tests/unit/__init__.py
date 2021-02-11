@@ -1,7 +1,6 @@
 import unittest
 
-from app import create_app, db
-from app.domains.users.models import User
+from backend.app import create_app, db
 
 
 class AbstractViewUnitTest(unittest.TestCase):

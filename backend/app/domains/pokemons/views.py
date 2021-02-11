@@ -1,10 +1,10 @@
 from flask import Blueprint, request, jsonify
-from app.domains.pokemons.actions import create as create_pokemon, \
-    get_by_id as get_pokemon_by_id, \
-    get as get_pokemons, \
-    update as update_pokemon, \
-    delete as delete_pokemon, \
-    import_txt as import_txt_pokemon
+from backend.app.domains.pokemons.actions import create as create_pokemon, \
+                                                 get_by_id as get_pokemon_by_id, \
+                                                 get as get_pokemons, \
+                                                 update as update_pokemon, \
+                                                 delete as delete_pokemon, \
+                                                 import_txt as import_txt_pokemon
 
 app_pokemons = Blueprint('app.pokemons', __name__)
 

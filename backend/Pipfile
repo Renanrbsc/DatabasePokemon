@@ -14,6 +14,7 @@ flask = "*"
 flask-migrate = "*"
 psycopg2 = "*"
 xlrd = "*"
+cors = "*"
 
 [requires]
 python_version = "3.8"

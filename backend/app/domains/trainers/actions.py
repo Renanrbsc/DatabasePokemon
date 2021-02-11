@@ -1,6 +1,6 @@
 from typing import Dict, List
-from database.repository import commit, save
-from app.domains.trainers.models import Trainer
+from backend.database.repository import commit, save
+from backend.app.domains.trainers.models import Trainer
 
 
 def create(data: Dict[str, str]) -> Trainer:

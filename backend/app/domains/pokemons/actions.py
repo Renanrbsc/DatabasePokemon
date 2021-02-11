@@ -1,7 +1,7 @@
 from typing import Dict, List
-from database.repository import commit, save
-from app.domains.pokemons.models import Pokemon
-from utils.convert_txt import convert_txt_for_json
+from backend.database.repository import commit, save
+from backend.app.domains.pokemons.models import Pokemon
+from backend.utils.convert_txt import convert_txt_for_json
 
 
 def create(data: Dict[str, str]) -> Pokemon:

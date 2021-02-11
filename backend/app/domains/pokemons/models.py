@@ -1,5 +1,5 @@
-from database import db
-from app.domains.trainers.models import trainers_pokemons
+from backend.database import db
+from backend.app.domains.trainers.models import trainers_pokemons
 
 
 class Pokemon(db.Model):
